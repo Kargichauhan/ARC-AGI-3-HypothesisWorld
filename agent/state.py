@@ -56,12 +56,16 @@ class StructuredState:
     background: int
     objects: tuple[ObjectFeature, ...]
     color_histogram: tuple[tuple[int, int], ...]
+    raw_fingerprint: str
     fingerprint: str
     grid: tuple[tuple[int, ...], ...] = field(repr=False, compare=False)
+    abstraction: str = "interior-objects-v1"
 
     def compact(self) -> dict[str, object]:
         return {
             "fingerprint": self.fingerprint,
+            "raw_fingerprint": self.raw_fingerprint,
+            "abstraction": self.abstraction,
             "size": [self.width, self.height],
             "background": self.background,
             "objects": [obj.compact() for obj in self.objects],
@@ -129,3 +133,50 @@ def stable_fingerprint(rows: Iterable[Iterable[int]], background: int) -> str:
     for row in rows:
         digest.update(bytes(row))
     return digest.hexdigest()
+
+
+def abstract_fingerprint(
+    objects: Iterable[ObjectFeature],
+    *,
+    width: int,
+    height: int,
+    background: int,
+    levels_completed: int = 0,
+) -> str:
+    """Hash task-relevant interior objects while ignoring likely border UI.
+
+    Border-connected components remain available to perception and coordinate
+    generation; they are excluded only from the learning key. Pairwise spatial
+    relations make the key object-centric without discarding exact positions.
+    """
+    interior = sorted(
+        (obj for obj in objects if not obj.touches_border),
+        key=lambda obj: (obj.color, obj.bbox, obj.size, obj.shape_signature),
+    )
+    descriptors = tuple(
+        (obj.color, obj.size, obj.bbox, obj.shape_signature) for obj in interior
+    )
+    relations = []
+    for index, first in enumerate(interior):
+        for second in interior[index + 1 :]:
+            dx = (
+                -1
+                if first.centroid[0] < second.centroid[0]
+                else int(first.centroid[0] > second.centroid[0])
+            )
+            dy = (
+                -1
+                if first.centroid[1] < second.centroid[1]
+                else int(first.centroid[1] > second.centroid[1])
+            )
+            relations.append((first.color, second.color, dx, dy))
+    payload = (
+        "interior-objects-v1",
+        width,
+        height,
+        background,
+        levels_completed,
+        descriptors,
+        tuple(relations),
+    )
+    return blake2b(repr(payload).encode(), digest_size=10).hexdigest()

@@ -14,6 +14,7 @@ from .state import (
     ObjectMotion,
     StateDiff,
     StructuredState,
+    abstract_fingerprint,
     stable_fingerprint,
 )
 
@@ -112,13 +113,22 @@ def perceive(frame: Any) -> StructuredState:
     width = len(grid[0]) if grid else 0
     background = infer_background(grid)
     histogram = tuple(sorted(Counter(v for row in grid for v in row).items()))
+    objects = extract_objects(grid, background)
+    levels_completed = int(getattr(frame, "levels_completed", 0) or 0)
     return StructuredState(
         width=width,
         height=height,
         background=background,
-        objects=extract_objects(grid, background),
+        objects=objects,
         color_histogram=histogram,
-        fingerprint=stable_fingerprint(grid, background),
+        raw_fingerprint=stable_fingerprint(grid, background),
+        fingerprint=abstract_fingerprint(
+            objects,
+            width=width,
+            height=height,
+            background=background,
+            levels_completed=levels_completed,
+        ),
         grid=grid,
     )
 

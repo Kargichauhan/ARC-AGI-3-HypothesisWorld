@@ -41,7 +41,11 @@ class AgentConfig:
             ablation = Ablation(raw)
         except ValueError:
             ablation = Ablation.FULL
-        return cls(ablation=ablation)
+        try:
+            random_seed = int(os.getenv("HYPOTHESISWORLD_SEED", "0"))
+        except ValueError:
+            random_seed = 0
+        return cls(ablation=ablation, random_seed=random_seed)
 
     @property
     def uses_world_model(self) -> bool:

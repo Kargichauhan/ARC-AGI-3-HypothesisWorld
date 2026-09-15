@@ -36,12 +36,12 @@ boundaries, and deterministic coverage points—not uniform random clicks.
 | Module | Responsibility |
 |---|---|
 | `agent/perception.py` | Animation-frame normalization, background inference, connected objects, matching, motion, transformations, changes, and contacts |
-| `agent/state.py` | Immutable object-centric state and state-diff schema |
+| `agent/state.py` | Immutable object-centric state, raw audit identity, abstract learning identity, and state-diff schema |
 | `agent/hypotheses.py` | Competing predictions, beliefs, support, contradictions, complexity, rejection, and hypothesis generation |
 | `agent/exploration.py` | Legal action candidates, salient coordinates, novelty, risk, and prediction-disagreement scoring |
 | `agent/world_model.py` | Online empirical state/action transition model with uncertainty |
 | `agent/memory.py` | Bounded transitions, visited states, tested actions, object persistence, rejected rules, progress, deaths, and wins |
-| `agent/planner.py` | Confidence-gated short-horizon model-based action values |
+| `agent/planner.py` | Transition- and representation-confidence-gated short-horizon action values |
 | `agent/my_agent.py` | Official `Agent` interface adapter, lifecycle handling, and readable instrumentation |
 | `agent/config.py` | One-codepath ablation configuration |
 
@@ -64,8 +64,17 @@ Set `HYPOTHESISWORLD_ABLATION` to:
 Run a controlled sweep with:
 
 ```bash
-.venv/bin/python experiments/run_ablations.py --games ls20,vc33 --steps 100
+.venv/bin/python experiments/run_ablations.py --games ls20,vc33 --steps 100 --seeds 0,1,2
 ```
+
+The state representation keeps a full-frame fingerprint for auditing and an
+object-centric fingerprint for learning. Border-connected components are treated as
+possible interface noise in the learning key but remain visible to perception and
+action generation. Raw-to-abstract alias counts reduce planning confidence when that
+assumption merges too many distinct screens.
+
+The first controlled pilot and its limitations are recorded in
+[`experiments/reports/2026-09-15-stable-state-pilot.md`](experiments/reports/2026-09-15-stable-state-pilot.md).
 
 ## Setup and verification
 

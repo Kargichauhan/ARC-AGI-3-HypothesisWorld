@@ -53,7 +53,9 @@ research mechanism while leaving the official evaluation path and measurements s
   be mis-segmented.
 - Same-colour touching objects merge under connected-component perception.
 - Animation timing may make a transient effect look like a stable causal outcome.
-- Exact state fingerprints fragment experience when counters or cosmetic pixels change.
+- Exact state fingerprints fragment experience when counters or cosmetic pixels change;
+  object abstraction can create the opposite failure by aliasing semantically different
+  screens.
 - Greedy matching is ambiguous among repeated identical objects.
 - Outcome hypotheses describe correlations and may confuse preconditions with effects.
 - Sparse reward and irreversible actions can make active experiments too expensive under
@@ -62,8 +64,13 @@ research mechanism while leaving the official evaluation path and measurements s
 
 ## Next five experiments
 
-1. Replace exact frame hashes with learned stable masks and object-relation state keys;
-   measure transition reuse and false state aliasing.
+The first stable-state pilot replaced exact learning keys with dual raw/abstract
+identities and added alias-aware planning confidence. It improved the three-seed
+`vc33` full-agent completion result, but is not evidence of broad generalization; see
+[`experiments/reports/2026-09-15-stable-state-pilot.md`](experiments/reports/2026-09-15-stable-state-pilot.md).
+
+1. Replace the fixed border heuristic with learned stable masks, evaluated on more
+   games with a preregistered alias-risk threshold.
 2. Add relational hypothesis templates (`touching`, `inside`, `aligned`, `same colour`)
    and compare causal prediction calibration against outcome-only hypotheses.
 3. Estimate expected information gain by posterior rollouts rather than entropy of point

@@ -119,6 +119,9 @@ class MyAgent(Agent):
             json.dumps(
                 {
                     "event": "outcome",
+                    "game_id": self.game_id,
+                    "ablation": self.config.ablation.value,
+                    "seed": self.config.random_seed,
                     "step": self.action_counter,
                     "action": self._pending_action.compact(),
                     "actual": diff.compact(),
@@ -172,12 +175,18 @@ class MyAgent(Agent):
         ]
         return {
             "agent": "HypothesisWorld",
+            "game_id": self.game_id,
             "ablation": self.config.ablation.value,
+            "seed": self.config.random_seed,
             "step": self.action_counter,
             "state": {
                 "fingerprint": state.fingerprint,
+                "raw_fingerprint": state.raw_fingerprint,
                 "objects": len(state.objects),
                 "visited": self.memory.visited_states[state.fingerprint],
+                "unique_abstract_states": len(self.memory.visited_states),
+                "unique_raw_states": len(self.memory.raw_states),
+                "raw_aliases": len(self.memory.state_aliases[state.fingerprint]),
                 "persistent_object_types": len(self.memory.persistent_object_signatures()),
                 "transient_object_types": len(self.memory.transient_object_signatures),
             },

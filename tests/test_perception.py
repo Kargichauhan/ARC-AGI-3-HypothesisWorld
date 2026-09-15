@@ -1,3 +1,5 @@
+from types import SimpleNamespace
+
 from agent.perception import diff_states, extract_objects, latest_grid, perceive
 
 
@@ -35,3 +37,33 @@ def test_frame_diff_detects_appearance_and_disappearance() -> None:
     # Same location is matched as a transformation instead of double-counting.
     assert len(diff.transformed) == 1
     assert diff.changed
+
+
+def test_border_counter_changes_do_not_fragment_abstract_state() -> None:
+    first = perceive([[2, 0, 0], [0, 3, 0], [0, 0, 0]])
+    second = perceive([[2, 2, 0], [0, 3, 0], [0, 0, 0]])
+    assert first.raw_fingerprint != second.raw_fingerprint
+    assert first.fingerprint == second.fingerprint
+
+
+def test_interior_motion_and_level_progress_change_abstract_state() -> None:
+    first = perceive(
+        SimpleNamespace(
+            frame=[[[0, 0, 0, 0], [0, 3, 0, 0], [0, 0, 0, 0]]],
+            levels_completed=0,
+        )
+    )
+    moved = perceive(
+        SimpleNamespace(
+            frame=[[[0, 0, 0, 0], [0, 0, 3, 0], [0, 0, 0, 0]]],
+            levels_completed=0,
+        )
+    )
+    progressed = perceive(
+        SimpleNamespace(
+            frame=[[[0, 0, 0, 0], [0, 3, 0, 0], [0, 0, 0, 0]]],
+            levels_completed=1,
+        )
+    )
+    assert first.fingerprint != moved.fingerprint
+    assert first.fingerprint != progressed.fingerprint

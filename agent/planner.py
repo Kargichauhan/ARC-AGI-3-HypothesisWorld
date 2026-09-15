@@ -33,22 +33,30 @@ class ShortHorizonPlanner:
             edges = self.world_model.known_edges(fingerprint)
             if not edges:
                 return self.memory.state_novelty(fingerprint)
+            representation_confidence = self.memory.representation_confidence(fingerprint)
+            usable_edges = [
+                (target, confidence * representation_confidence)
+                for _, target, confidence in edges
+                if confidence * representation_confidence >= self.confidence_threshold
+            ]
+            if not usable_edges:
+                return 0.0
             return max(
                 confidence
                 * (self.memory.state_novelty(target) + 0.55 * future_value(target, depth - 1))
-                for _, target, confidence in edges
+                for target, confidence in usable_edges
             )
 
         values: dict[ActionKey, float] = {}
         for action in actions:
             prediction = self.world_model.predict(state, action)
-            if (
-                prediction.next_state is None
-                or prediction.confidence < self.confidence_threshold
-            ):
+            confidence = prediction.confidence * self.memory.representation_confidence(
+                state.fingerprint
+            )
+            if prediction.next_state is None or confidence < self.confidence_threshold:
                 values[action] = 0.0
                 continue
-            values[action] = prediction.confidence * (
+            values[action] = confidence * (
                 2.0 * prediction.expected_progress
                 + self.memory.state_novelty(prediction.next_state)
                 + 0.55 * future_value(prediction.next_state, self.horizon - 1)
