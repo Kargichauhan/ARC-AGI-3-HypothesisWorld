@@ -66,8 +66,11 @@ research mechanism while leaving the official evaluation path and measurements s
    measure transition reuse and false state aliasing.
 2. Add relational hypothesis templates (`touching`, `inside`, `aligned`, `same colour`)
    and compare causal prediction calibration against outcome-only hypotheses.
-3. Estimate expected information gain by posterior rollouts rather than entropy of point
-   predictions; compare diagnostic actions per unit of RHAE cost.
+3. Validate observation likelihoods before revisiting posterior-rollout information gain.
+   The [September 17 pilot](experiments/reports/2026-09-17-posterior-information.md)
+   passed a diagnostic synthetic fixture but reduced public-game completion from
+   two levels to one; its implementation was rejected. Compare calibration on
+   separate trajectories before testing diagnostic actions per unit of RHAE cost.
 4. Learn reversible action models and use `ACTION7` or safe reset-aware counterfactual
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
