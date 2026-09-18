@@ -70,5 +70,9 @@ research mechanism while leaving the official evaluation path and measurements s
    predictions; compare diagnostic actions per unit of RHAE cost.
 4. Learn reversible action models and use `ACTION7` or safe reset-aware counterfactual
    experiments where the framework exposes them.
-5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
+5. Validate the scene-change prediction/observation contract before adding latent-state
+   hypotheses. The [September 18 action-history pilot](experiments/reports/2026-09-18-action-history.md)
+   improved public fallback prediction error by only 0.18% and added no completed
+   levels; the implementation was rejected. A progress-only synthetic fixture also
+   exposed inconsistent change definitions. Evaluate future history models on
    held-out games with preregistered thresholds and seeds.
