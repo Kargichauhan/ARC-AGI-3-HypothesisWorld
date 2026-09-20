@@ -59,6 +59,10 @@ research mechanism while leaving the official evaluation path and measurements s
 - Sparse reward and irreversible actions can make active experiments too expensive under
   the squared action-efficiency metric.
 - The depth-two planner cannot compose unseen transformations or infer distant goals.
+- Planner novelty can reward observed no-ops and cycles repeatedly. Removing that
+  credit reduced repeated actions without improving completion in the
+  [September 20 pilot](experiments/reports/2026-09-20-path-novelty.md); fewer repeats
+  alone are insufficient evidence of a better agent.
 
 ## Next five experiments
 
@@ -70,5 +74,10 @@ research mechanism while leaving the official evaluation path and measurements s
    predictions; compare diagnostic actions per unit of RHAE cost.
 4. Learn reversible action models and use `ACTION7` or safe reset-aware counterfactual
    experiments where the framework exposes them.
-5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
-   held-out games with preregistered thresholds and seeds.
+5. Audit whether candidate coordinate probes can produce useful visible effects in
+   persistent-no-op cases before expanding planning. The September 20 path-exclusive
+   novelty pilot reduced public repeats 37.26% but added no levels and was rejected.
+   Any renewed exact-action identity experiment should use a preregistered factorial
+   comparison with path novelty to isolate their interaction. For later latent-state
+   experiments, first resolve the scene-change prediction/observation mismatch found
+   by the September 18 action-history pilot.
