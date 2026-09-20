@@ -59,6 +59,8 @@ research mechanism while leaving the official evaluation path and measurements s
 - Sparse reward and irreversible actions can make active experiments too expensive under
   the squared action-efficiency metric.
 - The depth-two planner cannot compose unseen transformations or infer distant goals.
+- Exact action identity can expose a planner preference for observed no-op self-loops:
+  novelty assigned to their destination may outweigh an untested action's novelty.
 
 ## Next five experiments
 
@@ -66,9 +68,13 @@ research mechanism while leaving the official evaluation path and measurements s
    measure transition reuse and false state aliasing.
 2. Add relational hypothesis templates (`touching`, `inside`, `aligned`, `same colour`)
    and compare causal prediction calibration against outcome-only hypotheses.
-3. Estimate expected information gain by posterior rollouts rather than entropy of point
-   predictions; compare diagnostic actions per unit of RHAE cost.
+3. Validate observation likelihoods and calibration before another posterior information
+   gain estimator. The September 17 uniform-wildcard pilot reduced public completion.
 4. Learn reversible action models and use `ACTION7` or safe reset-aware counterfactual
    experiments where the framework exposes them.
-5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
-   held-out games with preregistered thresholds and seeds.
+5. Test a planner rule for unproductive self-transitions before retaining exact click
+   identity. The [September 19 pilot](experiments/reports/2026-09-19-click-identity.md)
+   increased synthetic discovery actions by 35.13% and public repeat clicks from 521
+   to 663, with no extra completed levels; the candidate was rejected. Before future
+   latent-state experiments, also resolve the scene-change prediction/observation
+   mismatch identified by the September 18 action-history pilot.
