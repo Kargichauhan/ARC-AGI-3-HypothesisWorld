@@ -59,6 +59,11 @@ research mechanism while leaving the official evaluation path and measurements s
 - Sparse reward and irreversible actions can make active experiments too expensive under
   the squared action-efficiency metric.
 - The depth-two planner cannot compose unseen transformations or infer distant goals.
+- Raster-order coordinate truncation can exclude entire regions in crowded scenes.
+  The [September 21 pilot](experiments/reports/2026-09-21-spatial-probes.md) improved
+  spatial target coverage but regressed public completion (2 to 0 levels). An
+  effective newly available probe was never selected across 300 `ft09` actions;
+  proposal availability and actual exploration must be evaluated separately.
 
 ## Next five experiments
 
@@ -70,5 +75,9 @@ research mechanism while leaving the official evaluation path and measurements s
    predictions; compare diagnostic actions per unit of RHAE cost.
 4. Learn reversible action models and use `ACTION7` or safe reset-aware counterfactual
    experiments where the framework exposes them.
-5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
-   held-out games with preregistered thresholds and seeds.
+5. Audit selection probability for untested coordinate probes after repeated observed
+   no-ops before adding more proposal geometry. The September 21 spatial sampling
+   candidate was rejected despite passing its synthetic coverage gate. A retry should
+   isolate proposal coverage and selection behavior with a preregistered factorial
+   comparison and account for changes in seeded random tie assignment. History-based
+   experiments remain a later direction after resolving observation-contract issues.
