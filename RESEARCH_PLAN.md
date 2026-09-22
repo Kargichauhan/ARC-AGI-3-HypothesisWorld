@@ -59,6 +59,13 @@ research mechanism while leaving the official evaluation path and measurements s
 - Sparse reward and irreversible actions can make active experiments too expensive under
   the squared action-efficiency metric.
 - The depth-two planner cannot compose unseen transformations or infer distant goals.
+- Proposal coverage and selection can jointly block discovery. The
+  [September 22 factorial](experiments/reports/2026-09-22-probe-deferral.md) combined
+  spatial proposals with temporary no-op probe deferral to expose 27 visible `ft09`
+  responses, versus zero for either factor alone, but gained no completed levels.
+  Both candidates were rejected; visible response is not sufficient progress.
+- Deferring visibly unchanged actions can suppress useful hidden-state sequences.
+  Future controls need a competent delayed-effect baseline, not a near-zero floor.
 
 ## Next five experiments
 
@@ -70,5 +77,8 @@ research mechanism while leaving the official evaluation path and measurements s
    predictions; compare diagnostic actions per unit of RHAE cost.
 4. Learn reversible action models and use `ACTION7` or safe reset-aware counterfactual
    experiments where the framework exposes them.
-5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
-   held-out games with preregistered thresholds and seeds.
+5. Audit transition reuse and goal-directed sequence selection after newly discovered
+   effects, before adding another exploration bonus or probe suppression rule. The
+   September 22 proposal/selection factorial resolved a discovery gap without
+   improving completion. Any history-aware retry should first demonstrate competence
+   on delayed-effect controls and align visible-change observation contracts.
