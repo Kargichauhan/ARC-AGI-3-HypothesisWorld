@@ -59,6 +59,10 @@ research mechanism while leaving the official evaluation path and measurements s
 - Sparse reward and irreversible actions can make active experiments too expensive under
   the squared action-efficiency metric.
 - The depth-two planner cannot compose unseen transformations or infer distant goals.
+- Learned progress can be unavailable to lookahead even after a level is completed.
+  The [September 23 continuation-utility pilot](experiments/reports/2026-09-23-continuation-utility.md)
+  corrected synthetic goal/hazard choices but found no reachable learned progress
+  edge during public decisions; completion stayed at two levels. Its code was rejected.
 
 ## Next five experiments
 
@@ -70,5 +74,8 @@ research mechanism while leaving the official evaluation path and measurements s
    predictions; compare diagnostic actions per unit of RHAE cost.
 4. Learn reversible action models and use `ACTION7` or safe reset-aware counterfactual
    experiments where the framework exposes them.
-5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
-   held-out games with preregistered thresholds and seeds.
+5. Measure reward-bearing transition reuse and lookahead reachability before adding
+   further planner utility terms. If testing representation changes together with
+   continuation utility, preregister a factorial comparison with false-aliasing controls.
+   History-dependent proposals still require competent delayed-effect controls and
+   consistent observation contracts, following the earlier daily pilots.
