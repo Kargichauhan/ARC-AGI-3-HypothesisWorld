@@ -59,6 +59,11 @@ research mechanism while leaving the official evaluation path and measurements s
 - Sparse reward and irreversible actions can make active experiments too expensive under
   the squared action-efficiency metric.
 - The depth-two planner cannot compose unseen transformations or infer distant goals.
+- Transition reliability and exploration value differ. The
+  [September 24 confidence pilot](experiments/reports/2026-09-24-evidence-confidence.md)
+  reduced repeats but completed no extra public levels; its unseen-outcome prior
+  worsened public prediction loss by 5.40% and was rejected. Sparse transitions
+  were not uniformly unreliable, while repeated reliable no-ops remained unproductive.
 
 ## Next five experiments
 
@@ -70,5 +75,8 @@ research mechanism while leaving the official evaluation path and measurements s
    predictions; compare diagnostic actions per unit of RHAE cost.
 4. Learn reversible action models and use `ACTION7` or safe reset-aware counterfactual
    experiments where the framework exposes them.
-5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
-   held-out games with preregistered thresholds and seeds.
+5. Audit transition reliability by action pooling and observation context on separate
+   trajectories before adding another confidence penalty. Distinguish prediction
+   accuracy from useful exploration and reward-bearing transition reuse; the
+   September 24 uniform prior passed synthetic gates but failed public completion.
+   History-dependent models still need competent delayed-effect controls.
