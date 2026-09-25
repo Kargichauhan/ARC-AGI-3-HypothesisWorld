@@ -59,6 +59,10 @@ research mechanism while leaving the official evaluation path and measurements s
 - Sparse reward and irreversible actions can make active experiments too expensive under
   the squared action-efficiency metric.
 - The depth-two planner cannot compose unseen transformations or infer distant goals.
+- Better fallback prediction need not change useful decisions. The
+  [September 25 shape-transfer pilot](experiments/reports/2026-09-25-shape-transfer.md)
+  cut designed synthetic error by 70.93%, but public progress/failure predictions
+  and all actions were unchanged; completion stayed at two levels. It was rejected.
 
 ## Next five experiments
 
@@ -70,5 +74,8 @@ research mechanism while leaving the official evaluation path and measurements s
    predictions; compare diagnostic actions per unit of RHAE cost.
 4. Learn reversible action models and use `ACTION7` or safe reset-aware counterfactual
    experiments where the framework exposes them.
-5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
-   held-out games with preregistered thresholds and seeds.
+5. Audit availability and transfer of reward/failure evidence on separate trajectories
+   before adding another fallback context. Measure whether context changes decision
+   values, not merely confidence: September 25's shape fallback supported 105 public
+   selected-action forecasts but changed no progress/failure estimate. Any broader
+   object-relation transfer needs false-alias controls and a completion gate.
