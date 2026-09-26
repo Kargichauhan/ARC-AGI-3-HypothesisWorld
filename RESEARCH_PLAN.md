@@ -59,6 +59,12 @@ research mechanism while leaving the official evaluation path and measurements s
 - Sparse reward and irreversible actions can make active experiments too expensive under
   the squared action-efficiency metric.
 - The depth-two planner cannot compose unseen transformations or infer distant goals.
+- Reducing hypothesis-information bonuses with empirical uncertainty can improve
+  designed discovery without improving completion. The
+  [September 26 pilot](experiments/reports/2026-09-26-epistemic-disagreement.md)
+  reduced synthetic actions by 26.04% and public repeats from 687 to 450, but levels
+  stayed at two. It was rejected; all 300 candidate `ft09` outcomes remained no-ops
+  despite trying 23–24 distinct actions per seed instead of three.
 
 ## Next five experiments
 
@@ -66,8 +72,10 @@ research mechanism while leaving the official evaluation path and measurements s
    measure transition reuse and false state aliasing.
 2. Add relational hypothesis templates (`touching`, `inside`, `aligned`, `same colour`)
    and compare causal prediction calibration against outcome-only hypotheses.
-3. Estimate expected information gain by posterior rollouts rather than entropy of point
-   predictions; compare diagnostic actions per unit of RHAE cost.
+3. Audit whether proposed interventions expose useful state changes and sequences
+   before adding another information-bonus estimator. If combining proposal changes
+   with uncertainty weighting, preregister a factorial test and a completion gate;
+   greater action coverage alone did not pass the September 26 pilot.
 4. Learn reversible action models and use `ACTION7` or safe reset-aware counterfactual
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
