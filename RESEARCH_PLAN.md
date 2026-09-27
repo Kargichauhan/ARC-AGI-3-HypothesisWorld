@@ -60,6 +60,12 @@ research mechanism while leaving the official evaluation path and measurements s
   the squared action-efficiency metric.
 - The depth-two planner cannot compose unseen transformations or infer distant goals.
 
+- Fixed repeated-action bursts can overfit delayed-effect fixtures. The
+  [September 27 pilot](experiments/reports/2026-09-27-temporal-probes.md) solved
+  100/100 three-hit fixtures versus zero, but raised one-hit action cost by 73%,
+  reduced alternating-sequence solves from 22 to eight, and left public completion
+  at two levels. Reject unconditional temporal commitment.
+
 ## Next five experiments
 
 1. Replace exact frame hashes with learned stable masks and object-relation state keys;
@@ -70,5 +76,7 @@ research mechanism while leaving the official evaluation path and measurements s
    predictions; compare diagnostic actions per unit of RHAE cost.
 4. Learn reversible action models and use `ACTION7` or safe reset-aware counterfactual
    experiments where the framework exposes them.
-5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
-   held-out games with preregistered thresholds and seeds.
+5. Learn whether context requires repeated or alternating interventions before adding
+   temporal commitment. Require competent controls for both, efficiency on one-step
+   tasks, and additional public completion before held-out evaluation; the September
+   27 fixed-burst pilot failed the completion gate.
