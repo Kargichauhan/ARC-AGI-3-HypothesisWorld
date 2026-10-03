@@ -60,6 +60,12 @@ research mechanism while leaving the official evaluation path and measurements s
   the squared action-efficiency metric.
 - The depth-two planner cannot compose unseen transformations or infer distant goals.
 
+- Reaching an experiment opportunity does not ensure the selector executes it. The
+  [October 3 frontier-routing pilot](experiments/reports/2026-10-03-frontier-routing.md)
+  reached every synthetic frontier but solved none: persistent disagreement favored
+  known no-ops over the untested goal probe. Public completion stayed at two levels.
+  Reject standalone routing; require probe execution and completion, not just arrival.
+
 ## Next five experiments
 
 1. Replace exact frame hashes with learned stable masks and object-relation state keys;
@@ -70,5 +76,7 @@ research mechanism while leaving the official evaluation path and measurements s
    predictions; compare diagnostic actions per unit of RHAE cost.
 4. Learn reversible action models and use `ACTION7` or safe reset-aware counterfactual
    experiments where the framework exposes them.
-5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
-   held-out games with preregistered thresholds and seeds.
+5. Diagnose probe execution at reached frontiers: distinguish hypothesis-label entropy
+   from actionable uncertainty, and require competent immediate/delayed controls. Any
+   routing-plus-selection retry needs a preregistered factorial and added public
+   completion before held-out evaluation.
