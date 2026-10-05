@@ -72,3 +72,15 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+
+## 2026-10-05: directional contact transfer rejected
+
+[Research report](experiments/reports/2026-10-05-relational-transfer.md): directional
+colour-contact fallback reduced designed synthetic effect loss 99.17% and raised
+selector accuracy 49.57%→100%, but cached public completion stayed 2→2 and all
+15 paired action trajectories were identical. Of 733 pre-update fallback forecasts,
+37 changed only visible-change probability, which selection does not consume.
+Candidate removed. Before adding another fallback context, establish that observed
+reward/failure evidence can reach unobserved actions and change selection. Any use
+of predicted visible change for exploration requires a separate preregistered pilot.
