@@ -72,3 +72,14 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+
+## 2026-10-06: effect-based exploration rejected
+
+[Research report](experiments/reports/2026-10-06-effect-curiosity.md): a signed,
+novelty-discounted scene-change bonus cut synthetic corridor cost 72.84% and
+passed finite-flicker/known-goal controls, but cached public completion regressed
+2→1 despite no-op outcomes falling 595→353. Candidate removed. A single pooled
+visible effect can outweigh an untested action without predicting progress.
+Before another effect-seeking policy, test state-dependent useful actions and
+inexhaustible visual distractors; require completion gains, not change counts.
