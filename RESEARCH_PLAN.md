@@ -72,3 +72,15 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+
+## 2026-10-07: joint-outcome planning rejected
+
+[Research report](experiments/reports/2026-10-07-joint-outcome-planning.md): a four-arm
+factorial separated future utility from joint outcome averaging/terminal handling.
+The combined planner corrected all 300 supplied stochastic route decisions, versus
+0 for baseline and 100 for utility alone, but all four arms completed the same two
+public levels. Candidate removed. Eligible lookahead reached stochastic outcomes
+on 32 decisions and a known failure once, but no positive reward. Establish reusable,
+reachable reward evidence before extending empirical backups; any representation
+combination requires a separate factorial and false-alias controls.
