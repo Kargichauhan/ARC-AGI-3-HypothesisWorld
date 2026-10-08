@@ -72,3 +72,14 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+
+## 2026-10-08: state-conditioned falsification rejected
+
+[Research report](experiments/reports/2026-10-08-contextual-falsification.md): bounded
+exact-state/action hypothesis banks improved trained D contextual decisions from
+100/200 to 200/200, preserving stationary controls, but F public completion stayed
+2 → 2. Candidate removed. Only ls20 choices changed; vc33 had no context with three
+observations, and persistent no-op games retained the same disagreement. Establish
+reusable precondition evidence that affects full-agent choices before generalizing
+context keys; require false-alias controls for any representation combination.
