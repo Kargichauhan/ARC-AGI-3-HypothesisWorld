@@ -72,3 +72,13 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+
+## 2026-10-09: passive action-contrast exploration rejected
+
+[Research report](experiments/reports/2026-10-09-action-contrast.md): same-state
+outcome contrast identified distinct effects in 100/100 supplied-evidence trials
+versus 24/100 baseline/raw effect, but activated on zero public decisions. Completion
+baseline/raw/contrast was 2/1/2; all contrast trajectories matched baseline. Candidate
+removed. Require affordable matched action data at revisited states before another
+contrast estimator, with action-cost, hidden-state and useless-distractor controls.
