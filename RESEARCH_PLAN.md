@@ -72,3 +72,12 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## 2026-10-10: active matched action panels rejected
+
+[Research report](experiments/reports/2026-10-10-matched-panels.md): a bounded paired
+sampling schedule reduced synthetic hub acquisition cost 19 to 15 actions, but
+coverage was already 100%; immediate-goal cost rose 40%. Public levels stayed 2 to 2.
+All 282 eligible comparisons occurred in a persistent-no-op game. Candidate removed.
+Require useful consequences and affordable return opportunities before another
+matched-comparison mechanism; sample counts alone are insufficient.
