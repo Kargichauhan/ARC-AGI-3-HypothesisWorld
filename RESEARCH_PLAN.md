@@ -72,3 +72,13 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## 2026-10-13: change-point forgetting rejected
+
+[Research report](experiments/reports/2026-10-13-change-point-forgetting.md): replacing
+local evidence after six consistent then three consistently contradictory outcomes
+reduced designed post-switch Brier loss 39.41%, with small stationary-calibration
+losses. Public completion stayed 2 to 2; zero switches or changed predictions.
+All 376 eligible nine-observation windows per arm had no contradictory suffix.
+Candidate removed. Establish persistent, decision-relevant changes at precisely
+identified interventions before extending local forgetting.
