@@ -72,3 +72,12 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## 2026-10-14: ordered-pair sequence coverage rejected
+
+[Research report](experiments/reports/2026-10-14-sequence-cover.md): systematic
+repeat/switch pairs after no-ops improved designed pooled solves 82% to 100%, below
+the required 20-point gain; immediate-goal action cost rose 51.62%, above the 50%
+ceiling. Public completion stayed 2 to 2 despite 75 ranking overrides. All three
+completed pair schedules were in ft09 and had no visible effect. Candidate removed.
+Require affordable, relevant intervention selection before extending sequence coverage.
