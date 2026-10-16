@@ -72,3 +72,13 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## 2026-10-16: reversible retreat rejected
+
+[Research report](experiments/reports/2026-10-16-reversible-retreat.md): one undo after
+all proposed actions produce two no-ops returned from 76 synthetic dead ends, but all
+76 were immediately re-entered; solves remained 24/100 and delayed-effect cost rose
+80%. Public completion stayed 2 to 2 with zero activations: no decision satisfied
+all-proposal exhaustion. Candidate removed. Require affordable exhaustion evidence,
+useful selection after return and delayed-progress controls before another retreat
+mechanism; any combination with branch avoidance needs a preregistered factorial.
