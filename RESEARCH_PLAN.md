@@ -72,3 +72,13 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## 2026-10-17: grounded object probes rejected
+
+[Research report](experiments/reports/2026-10-17-grounded-probes.md): grounding empty
+object centroids on nearby member pixels, retaining cavities as secondary probes,
+reduced synthetic surface solves 63/400 to 60/400; public completion stayed 2 to 2.
+Both synthetic baseline controls were incompetent. Proposal lists changed on 591
+public decisions per arm, without added levels. Candidate removed. Before another
+geometry-only proposal change, demonstrate that selection can use grounded candidates;
+separate geometry, selection and random tie assignment with competent online controls.
