@@ -72,3 +72,17 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## October 18: intervention-consistent planning factorial
+
+Tested the previously unmeasured interaction of September 19 exact click identity
+and September 20 path-exclusive planner novelty, retaining both isolated arms.
+On immediate nine-click discovery, joint solves 100/100 versus baseline 85/100,
+with 38.86% lower capped action cost and 51.31% lower cost than identity alone.
+Positive controls pass, but a multi-click four-hit diagnostic remains unsolved.
+Across five cached official public games, F seeds 0/1/2 and 100 actions, all four
+arms complete two levels. Joint reduces no-ops 595 to 463 without added completion.
+Reject and remove the implementation; retain the interaction evidence. Future
+work needs useful intervention coverage and evidence for persistence versus
+switching, with competent multi-action delayed-effect controls. See
+[the factorial report](experiments/reports/2026-10-18-intervention-planning.md).
