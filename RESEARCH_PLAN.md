@@ -72,3 +72,16 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## October 19: motion-grounded continuation
+
+Tested a bounded F-only continuation option after two coherent single-object
+translations under the same action. Demonstrated-corridor solves improve 0/100 to
+100/100 and capped cost falls 75%; immediate and known-progress turn controls pass.
+Unknown turns become 74.28% slower, while harmful continuation loses all 100 baseline
+solves. Consistent movement does not establish useful movement. Across five cached
+public games, seeds 0/1/2 and 100 actions, levels remain 2 to 2 with no overrides:
+none of 1,488 transitions per arm has exactly one detected motion. Reject and remove
+the implementation. Future motion options need action-attributable object evidence
+amid multiple motions and useful-versus-harmful continuation controls. See
+[the motion-continuation report](experiments/reports/2026-10-19-motion-continuation.md).
