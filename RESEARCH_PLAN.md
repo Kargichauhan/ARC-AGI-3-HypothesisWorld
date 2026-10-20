@@ -72,3 +72,13 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## 2026-10-20: global object correspondence rejected
+
+[Research report](experiments/reports/2026-10-20-global-correspondence.md): maximizing
+existing pair similarity reduced synthetic translation identity errors 743 to 263
+(64.60%), but changed zero assignments or outcomes on 2,976 public observations.
+Completion stayed 2 to 2; the distinct-colour baseline control also failed its 95%
+competence gate (91.44%). Candidate removed. Establish decision-relevant public
+correspondence errors or test a different objective before further assignment work;
+greedy suboptimality does not explain this cohort's multiple-motion observations.
