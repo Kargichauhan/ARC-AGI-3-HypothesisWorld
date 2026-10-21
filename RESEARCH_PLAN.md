@@ -72,3 +72,14 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## 2026-10-21: conjunctive falsification rejected
+
+[Research report](experiments/reports/2026-10-21-conjunctive-falsification.md): treating
+any known clause mismatch as contradiction eliminated stale synthetic motion rules,
+but stochastic Brier worsened 0.250101 to 0.295081 and public completion fell 2 to 0.
+The baseline strengthened 938 public rule updates despite known mismatches; strict
+falsification removed those updates but did not improve behavior. One existing
+label-entropy exploration assertion also failed. Candidate removed; final 15 tests
+and notebook checks pass. Distinguish stochastic/contextual rules from deterministic
+claims and compatible predictions from semantic disagreement before retrying.
