@@ -72,3 +72,13 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## 2026-10-22: source-balanced fallback rejected
+
+[Research report](experiments/reports/2026-10-22-source-balanced-transfer.md): giving
+observed source states equal weight reduced designed visitation-shift Brier loss
+44.36%, but public fallback error worsened 11.18%. Public completion stayed 2 to 2;
+1,443 candidate predictions changed without changing any selected action. Candidate
+removed. A matched-occupancy diagnostic favors the original frequency weighting:
+future transfer work must justify the target context distribution and demonstrate
+decision-relevant benefits before changing global evidence weights.
