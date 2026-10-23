@@ -72,3 +72,12 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## 2026-10-23: boundary-consensus background rejected
+
+[Research report](experiments/reports/2026-10-23-boundary-background.md): three-edge
+majority plus perimeter majority recovers all 200 large synthetic foreground objects,
+but fails all 200 decorative-frame controls (foreground IoU 1 → .007857). Public
+completion remains 2 → 2; no background, object-set or proposal changes in 2,976
+paired decisions. Candidate removed. Future background inference needs semantic-role
+evidence and public decision-relevant ambiguity, not another fixed geometric prior.
