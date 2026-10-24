@@ -72,3 +72,15 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## Daily experiment: local effect shrinkage (2026-10-24)
+
+Rejected a fixed two-observation prior from other states for already-observed local
+effects. Sparse IID Brier improved 46.07%; homogeneous and supported heterogeneous
+controls passed, but sparse heterogeneity was harmed (0 → .296296). On cached public
+F runs (five games, seeds 0/1/2, 100 actions), completion stayed 2 → 2. Local shadow
+loss improved 34.80%, entirely through unused visible-change prediction; progress
+estimates never changed and risk error increased slightly. Fourteen of 15 action
+sequences were unchanged. Candidate removed; production matches main. Future transfer
+needs context-compatibility evidence and decision-relevant gains, not lower aggregate
+prediction error alone. See [the report](experiments/reports/2026-10-24-local-effect-shrinkage.md).
