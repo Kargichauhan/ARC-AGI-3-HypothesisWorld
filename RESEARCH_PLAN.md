@@ -72,3 +72,12 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## October 29 palette-invariant transfer pilot
+
+Rejected a two-palette agreement gate for recolouring-invariant ACTION1–5 effects.
+Synthetic invariant prediction error fell .166667→0, but a colour-semantic control
+rose .166667→.666667; public completion stayed 2→2 with no changed forecast or decision.
+The implementation was removed. Two agreeing palettes cannot establish that colour
+is irrelevant. See [the research record](experiments/reports/2026-10-29-palette-transfer.md)
+for the fixed gates, evidence and limitations; this is not held-out ARC performance.
