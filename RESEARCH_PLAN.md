@@ -72,3 +72,22 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## Daily experiment: frontier options (2026-10-30)
+
+Tested a four-arm factorial: baseline, navigation to an untested action, local
+untested probing, and a committed route followed by its probe. The joint policy
+solved all 300 supplied-map corridor trials versus zero for every comparator,
+reducing pooled capped actions from 32 to 5; known-goal and single-action delayed
+controls were unchanged. This resolves the designed arrival/execution gap from
+October 3, but does not establish online map acquisition.
+
+Five cached public games, F seeds 0/1/2, 100 actions, 60 runs: all four arms
+completed two levels. Joint and probe-only trajectories were identical; joint
+started zero routes. Route-only started seven routes without added progress.
+Reject the mechanism despite synthetic interaction and fewer repeated actions;
+retain the negative factorial record. Require naturally acquired, useful route
+opportunities and competing hidden-delay controls before retrying. No held-out
+or official RHAE claim. Candidate archived and removed; production matches main.
+
+See [the experiment report](experiments/reports/2026-10-30-frontier-options.md).
