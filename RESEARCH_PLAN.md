@@ -72,3 +72,14 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## Progress-boundary renewal pilot — 2026-10-31
+
+Tested fresh hypothesis/empirical models after observed nonterminal level completion,
+with a four-arm factorial. Joint renewal reduced supplied-history switched-rule
+adaptation cost by 48.71%, but increased unchanged-rule cost sixfold and destroyed
+competing-action delayed solves (200/200 → 0/200). All public arms completed two
+levels; no gain. Reject the implementation and retain the evidence. A progress
+boundary alone does not justify discarding action-effect rules; future work needs
+selective incompatibility evidence and competent transfer/delay controls. See
+[the report](experiments/reports/2026-10-31-stage-renewal.md).
