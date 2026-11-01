@@ -72,3 +72,12 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## 2026-11-01: predictive hypothesis credibility rejected
+
+[Research report](experiments/reports/2026-11-01-predictive-credibility.md): weighting
+explicit hypotheses by past event-prediction error reduced primary synthetic Brier
+loss 33.51% and baseline-history public loss 11.54%, but public completion regressed
+2 to 0. Post-switch synthetic loss increased 40.15%. Candidate removed. Better
+calibration does not establish useful entropy-based experiments; require decision
+value and adaptation evidence before revisiting cumulative credibility weighting.
