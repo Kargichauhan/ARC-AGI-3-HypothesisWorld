@@ -72,3 +72,12 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## 2026-11-02: compatibility-aware disagreement rejected
+
+[Research report](experiments/reports/2026-11-02-compatible-disagreement.md): weighted
+contradictory prediction pairs improve supplied-rule diagnostic choices from 0/600
+to 600/600 and preserve reward/hazard controls, but public completion falls 2 to 1.
+No public forecast encounters the compatible-only synthetic distractor; the replacement
+also changes score scaling. Candidate removed. Establish naturally acquired useful
+compatible alternatives and separate semantic compatibility from scaling before retrying.
