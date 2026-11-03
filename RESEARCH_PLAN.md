@@ -72,3 +72,12 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## 2026-11-03: rotation-equivariant transfer rejected
+
+[Research report](experiments/reports/2026-11-03-rotation-transfer.md): agreement at
+two scene/action orientations solves the designed equivariant diagnostic (0/400 to
+400/400), but harms fixed-direction (400 to 98) and two-angle-agreement (400 to 0)
+controls. Public completion stays 2 to 2; zero eligible transfers across 62,982
+forecasts. Candidate removed. Establish transformation-valid action semantics and
+naturally occurring query coverage before retrying symmetry-based effect transfer.
