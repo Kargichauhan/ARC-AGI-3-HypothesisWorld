@@ -72,3 +72,12 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## 2026-11-09: diagonal connectivity rejected
+
+[Research report](experiments/reports/2026-11-09-diagonal-objects.md): eight-connected
+same-colour components recover diagonal synthetic sprites (partition and motion
+accuracy 0% to 100%) but merge independent corner-touching objects (partition 100%
+to 50%, motion 100% to 0%). Candidate removed after the fixed synthetic control gate
+failed; public testing was conditional and not run. Future topology inference needs
+temporal evidence or competing partitions, not universal diagonal merging.
