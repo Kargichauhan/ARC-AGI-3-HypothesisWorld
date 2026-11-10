@@ -72,3 +72,12 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## 2026-11-10: correspondence abstention rejected
+
+[Research report](experiments/reports/2026-11-10-correspondence-abstention.md): a 0.5
+mutual score margin suppresses all 400 ambiguous matches but reduces correct coherent
+motion matches from 400 to zero. Stationary and distinct-colour controls retain 400/400.
+Abstentions also create false birth/death events. Candidate removed; conditional public
+runs skipped after synthetic failure. Future work needs explicit unknown correspondence
+semantics and motion-coherence evidence rather than a universal pairwise margin.
