@@ -72,3 +72,14 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## November 11: coherent group correspondence rejected
+
+A unique complete translation of >=3 same-colour/shape objects fixes the designed
+coherent-motion identities (0/600 to 600/600), but destroys independent-motion
+identity recovery (600/600 to 0/600) on identical rendered frame pairs. Stationary
+controls stay perfect; distinct-colour overlap controls fail in both arms. Two-frame
+coherence is insufficient to identify causal motion. Candidate removed; public tests
+were conditional and not run. See
+[the report](experiments/reports/2026-11-11-coherent-correspondence.md).
+Require temporal/intervention evidence or competing identity hypotheses before retrying.
