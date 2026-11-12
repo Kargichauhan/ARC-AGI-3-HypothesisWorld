@@ -72,3 +72,16 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## November 12 experiment: enclosed background retention
+
+Retaining border-disconnected components of the background colour recovered all
+200 synthetic camouflaged objects but invented objects in all 200 closed-hole
+controls. Open-cavity and ordinary-object controls remained exact. Identical pixels
+support incompatible semantic roles; connectivity alone cannot resolve them.
+Rejected and removed the candidate after the fixed synthetic gate failed; public
+evaluation was conditional and not run. Candidate/final tests: 25/15 passing, with
+format/lint and all ten notebook module checks passing. See
+[the experiment report](experiments/reports/2026-11-12-background-retention.md).
+Future work needs competing object/hole interpretations plus temporal or intervention
+evidence, rather than unconditional promotion of enclosed background regions.
