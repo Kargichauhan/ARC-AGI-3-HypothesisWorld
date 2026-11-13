@@ -72,3 +72,13 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## Daily experiment: 2026-11-13 common-motion camera suppression
+
+Rejected removing dominant displacement supported by >=3 objects and >=75% of matches.
+Synthetic camera false-motion labels fell 800 to zero, but genuine swarm motions also
+fell 800 to zero; single-motion and stationary controls retained 200/200 exact sets.
+Identical camera/swarm observations cannot identify the causal reference frame. Candidate
+removed after the fixed control gate failed; conditional public evaluation not run.
+Retain competing camera/world-motion interpretations or seek anchored evidence before
+changing causal labels. See [report](experiments/reports/2026-11-13-camera-motion.md).
