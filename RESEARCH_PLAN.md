@@ -72,3 +72,13 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## Daily experiment: 2026-11-14 unique-shape correspondence
+
+Rejected prioritizing admissible colour/shape matches unique in both frames. Crossing
+identity accuracy rose 0/400 to 400/400, but in-place shape-exchange accuracy fell
+400/400 to zero. Stationary and translation controls retained 400/400 each. Identical
+pixels encode incompatible physical identities; unique signatures do not establish
+shape persistence. Candidate removed after the fixed control gate failed; conditional
+public evaluation skipped. Seek temporal/intervention evidence or competing identity
+interpretations. See [report](experiments/reports/2026-11-14-unique-shape.md).
