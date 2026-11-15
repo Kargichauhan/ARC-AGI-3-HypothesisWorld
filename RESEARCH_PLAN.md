@@ -72,3 +72,13 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## 2026-11-15: evidence-based reconsideration rejected
+
+[Research report](experiments/reports/2026-11-15-evidence-reconsideration.md): allowing
+three matching observations to bypass hypothesis rejection cooldown changed none of
+76,800 paired synthetic forecasts; returning-rule Brier stayed .215156 (0% gain).
+Exact rules never entered rejection, so cooldown was not the bottleneck. Candidate
+removed; public testing skipped at the failed synthetic gate. Establish naturally
+rejected, decision-relevant rules before extending reconsideration; any changed
+rejection mechanism needs a separately preregistered factorial experiment.
