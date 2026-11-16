@@ -72,3 +72,12 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## 2026-11-16: persistent-clause falsification rejected
+
+[Research report](experiments/reports/2026-11-16-persistent-clauses.md): three consecutive
+known clause mismatches remove stale reversal mass (.5 to 0), but fair-coin motion
+Brier worsens .250000 to .398711 and an existing entropy-ordering test fails.
+Candidate removed; final 15 tests and notebook checks pass. Public testing skipped
+at the failed synthetic gate. Fixed persistence does not distinguish noise from a
+rule change; future falsification needs probabilistic alternatives and evidence.
