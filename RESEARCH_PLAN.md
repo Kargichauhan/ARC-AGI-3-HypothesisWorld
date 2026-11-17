@@ -72,3 +72,11 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## 2026-11-17: rolling motion frequency rejected
+
+[Research report](experiments/reports/2026-11-17-motion-frequency.md): Laplace-smoothed
+16-observation motion weights reduced post-reversal stale mass 88.89%, but fair-coin
+Brier loss rose .250000 to .262048, exceeding the fixed .01 control allowance.
+Candidate removed; public evaluation skipped at the failed synthetic gate.
+Compare stationary and switching probabilistic explanations before retrying recency.
