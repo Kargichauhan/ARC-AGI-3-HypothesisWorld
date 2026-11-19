@@ -72,3 +72,11 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## November 19: conditional motion mass
+
+Preserving explicit-motion group mass removes wildcard inflation while retaining
+November 18 conditional forecasts. Synthetic reversal/calibration gates pass, but
+cached game/framework reads stalled before public evaluation. Candidate removed;
+completion efficacy remains untested. Retain the [research record](experiments/reports/2026-11-19-motion-mass.md).
+Evaluate the frozen candidate on public games before considering adoption or retuning.
