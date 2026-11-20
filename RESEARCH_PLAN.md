@@ -72,3 +72,15 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## 2026-11-20: velocity correspondence rejected
+
+[Research report](experiments/reports/2026-11-20-velocity-correspondence.md): using
+previous observed displacement to preassign unique same-colour/shape continuations
+improves crossing identities from 0/400 to 400/400, but bounce identities regress
+400/400 to 0/400. Stationary and translation controls remain 400/400. All initial
+velocity estimates are correct. Crossing and bounce admit identical three-frame
+observations; history alone cannot distinguish their identity assignments. Candidate
+removed after the fixed synthetic control gate failed. Public evaluation skipped.
+Future tracking should retain competing collision/continuation explanations or seek
+intervention evidence rather than treating velocity extrapolation as identity proof.
