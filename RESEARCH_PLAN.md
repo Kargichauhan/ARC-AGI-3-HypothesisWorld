@@ -72,3 +72,12 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## Daily experiment: 2026-11-23 lifetime-budget motion detection
+
+Rejected fixed-window motion testing with summable lifetime alpha spending. Early
+reversals detected 40/40; late reversals 0/40, with Brier .25 unchanged. Fair-coin
+false resets 1/200 pass the empirical <=1% gate. At late horizons the threshold falls
+below the smallest attainable p-value: controlling false alarms alone destroys power.
+Candidate removed; public gate skipped after synthetic failure. See
+[experiment report](experiments/reports/2026-11-23-sequential-motion.md).
