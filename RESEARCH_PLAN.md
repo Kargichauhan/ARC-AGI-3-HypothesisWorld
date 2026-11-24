@@ -72,3 +72,13 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## Daily experiment: 2026-11-24 multi-scale motion detection
+
+Rejected a finite bank of Fisher windows under lifetime alpha spending. Deterministic
+late changes recover (40/40 within32 observations), but noisy early/late changes detect
+only22/40 and1/40 within budget. All stationary controls have zero resets. Raw-Brier
+halving was an inappropriate noisy gate; latency independently fails, as does a
+post-hoc excess-loss diagnostic. Future stochastic gates should use excess proper
+scores and explicit latency budgets. Candidate removed; public gate skipped. See
+[experiment report](experiments/reports/2026-11-24-adaptive-motion-window.md).
