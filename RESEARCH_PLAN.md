@@ -72,3 +72,11 @@ research mechanism while leaving the official evaluation path and measurements s
    experiments where the framework exposes them.
 5. Add latent-state finite-state hypotheses for history-dependent effects, evaluated on
    held-out games with preregistered thresholds and seeds.
+
+## November 25: Markov motion mixture
+
+[Experiment](experiments/reports/2026-11-25-markov-motion.md): a bounded IID/first-order
+Bayesian motion mixture passed all synthetic temporal and calibration gates but
+reduced official public completed levels2→1 across30 paired runs. Candidate removed;
+production unchanged. Future work should isolate conditional motion calibration's
+interaction with entropy-based action selection before adopting another estimator.
